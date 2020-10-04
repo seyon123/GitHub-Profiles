@@ -1,0 +1,60 @@
+#repos {
+    max-height: calc(100vh - 354px);
+    overflow-y: auto;
+}
+
+.repo-item {
+    border-radius: 10px;
+    padding: 30px;
+    margin: 30px;
+    background-color: #232323; 
+    overflow: auto;
+    overflow-wrap: break-word;
+}
+
+.img {
+    margin-right: 5px;
+    color: #8E61E2;
+}
+
+.description {
+    color: white;
+}
+.repo-title {
+    font-size: 30px;
+    color: #8E61E2;
+}
+
+.bottom {
+    position:relative;
+}
+
+.language, .star, .fork {
+    max-width: 150px;
+    display:inline-block;
+    margin-right: 20px;
+    color: white;
+}
+
+.repo-item:hover{
+    text-decoration: none;
+    background-color: #3b3b3b;
+    transition: ease-in-out 0.2s;
+}
+
+.repo-item:hover > div > div{
+    color: #8E61E2;
+    transition: ease-in-out 0.2s;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+@media screen and (max-width: 910px) {
+
+    #repos {
+        max-height: unset;
+    }
+
+}

@@ -1,0 +1,21 @@
+footer {
+    min-height: 80px;
+    background: #232323;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 80px;  
+}
+  
+footer p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: #fff;
+    text-align: center;
+}
+
+footer a {
+    color: #8E61E2;
+    text-decoration: none;
+}
