@@ -11,6 +11,10 @@
 	align-items: center;
 }
 
+.profile-link {
+	z-index: 3;
+}
+
 .user-profile {
     background-repeat: no-repeat;
     background-color: #8E61E2;

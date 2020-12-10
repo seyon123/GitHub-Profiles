@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Main.css';
 import Profile from './Profile';
 import Repo from './Repo';
-
+import { withRouter } from "react-router";
 
 
 
@@ -46,7 +46,9 @@ class Main extends Component {
     componentDidMount() {
         this.getRepos();
         this.getProfile();
-        this.setState({ value: "" });
+        const profile = this.props.match.params.id || "seyon123";
+        this.setState({ value: profile });
+
     }
 
     change(event){
@@ -99,4 +101,4 @@ class Main extends Component {
     }
 }
 
-export default Main;
+export default withRouter(Main);

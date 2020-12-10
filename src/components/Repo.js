@@ -9,6 +9,7 @@ import './Repo.css';
 class Repo extends Component {
     render() {
         const repositories = this.props.repositories;
+        console.log(repositories)
 
         if (repositories.length ===  0 || repositories.message === "Not Found") {
             return (
@@ -22,7 +23,7 @@ class Repo extends Component {
         } else {
             return (
                 <div id="repos">
-                    {repositories.map(repo => (
+                    {repositories.sort((a,b) => Date.parse(b.updated_at) - Date.parse(a.updated_at)).map(repo => (
                         <a key={repo.name} href={repo.html_url} target='_blank' rel="noopener noreferrer">
                             <div className='repo-item'>
                                 <h1 className='repo-title'>{repo.owner.login + "/" + repo.name}</h1>
