@@ -47,6 +47,7 @@ class Main extends Component {
         this.getRepos();
         this.getProfile();
         const profile = this.props.match.params.id || "seyon123";
+        document.title = `${profile} | GitHub Profiles`;
         this.setState({ value: profile });
 
     }
@@ -60,6 +61,7 @@ class Main extends Component {
         event.preventDefault();
         this.getRepos();
         this.getProfile();
+        document.title = `${this.state.value} | GitHub Profiles`;
     }
     
     async getRepos(){
