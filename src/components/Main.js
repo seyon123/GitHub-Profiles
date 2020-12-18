@@ -13,7 +13,7 @@ class Main extends Component {
         this.change = this.change.bind(this);
         this.getSearch = this.getSearch.bind(this);
         this.state = {
-            value: 'seyon123',
+            value: '',
             repositories: [
                 {
                     name: 'No Repos Found',
@@ -44,13 +44,19 @@ class Main extends Component {
     }
 
     componentDidMount() {
-        this.getRepos();
-        this.getProfile();
         const profile = this.props.match.params.id || "seyon123";
+        this.setState({ value: profile});
+        console.log(this.state.value);
+        setTimeout(()=>{
+            this.getRepos();
+            this.getProfile();
+        }, 0);
         document.title = `${profile} | GitHub Profiles`;
-        this.setState({ value: profile });
-
     }
+
+    // componentDidUpdate(){
+    //     this.props.history.push(`/${this.state.value}`)
+    // }
 
     change(event){
         this.setState({value: event.target.value});
@@ -61,6 +67,7 @@ class Main extends Component {
         event.preventDefault();
         this.getRepos();
         this.getProfile();
+        this.props.history.push(`/${this.state.value}`)
         document.title = `${this.state.value} | GitHub Profiles`;
     }
     
